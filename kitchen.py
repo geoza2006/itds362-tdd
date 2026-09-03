@@ -3,7 +3,10 @@ class Quantity:
         self.amount = amount
 
     def times(self, multiplier):
-        self.amount = self.amount * multiplier
+        return Quantity(self.amount * multiplier)
 
+    def __eq__(self, other):
+        return self.amount == other.amount
 
-
+    def __repr__(self):
+        return f"Quantity({self.amount})"
