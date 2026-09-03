@@ -55,3 +55,12 @@ def test_addition_with_ounces():
     converter = Converter()
 
     assert converter.reduce(total, "g") == grams(228.3495)
+
+def test_sum_can_be_multiplied():
+    total = grams(200).plus(ounces(1))
+    doubled = total.times(2)
+
+    converter = Converter()
+
+    assert converter.reduce(doubled, "g") == grams(456.699)
+
